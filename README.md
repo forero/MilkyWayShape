@@ -1,4 +1,4 @@
 MilkyWayShape
 =============
 
-On the shape of Milky Way like halos
+On the shape of the Milky Way DM halo
