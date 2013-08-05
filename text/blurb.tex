@@ -1,37 +1,4 @@
-\documentclass{article}
-\usepackage{natbib}
-\newcommand{\apj}{ApJ}  
-\newcommand{\apjs}{ApJS}  
-\newcommand{\apjl}{ApJL}  
-\newcommand{\aj}{AJ}  
-\newcommand{\mnras}{MNRAS}  
-\newcommand{\mnrassub}{MNRAS accepted}  
-\newcommand{\aap}{A\&A}  
-\newcommand{\aaps}{A\&AS}  
-\newcommand{\araa}{ARA\&A}  
-\newcommand{\nat}{Nature}  
-\newcommand{\physrep}{PhR}
-\newcommand{\pasp}{PASP}    
-\newcommand{\pasj}{PASJ}    
-\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}  
-\newcommand{\Msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}} 
-\newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
-\newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc }\fi}}  
-\newcommand{\kms}{\,km~s$^{-1}$}
-\title{Shapes of Milky Way Dark Matter Halos}
-\author{Jaime E. Forero-Romero\\ Departamento de F\'{i}sica, Universidad de los Andes\\ Cra. 1 No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
 
-
-
-\begin{document}
-\maketitle
-
-
-
-\section{Observations}
-
-In this section we summarize the constraints on the shape of the Milky
-Way dark matter halo.
 
    
 \section{Simulation}\label{Simulations}
@@ -39,11 +6,11 @@ Way dark matter halo.
 We use a large N-body simulation dubbed \verb"Bolshoi". The data in
 this paper is available to the public throug a
 database \footnote{\texttt{http://www.multidark.org/MultiDark/MyDB}}
-presented by \cite{Riebe11}. The \verb"Bolshoi" simulation follows 
+presented by \cite{Riebe:2011gp}. The \verb"Bolshoi" simulation follows 
 the non-linear evolution of dark matter density field in a cubic
 volume of side $250$\hMpc sampled with $2048^3$ particles. The code
 adaptive mesh refinment code ART was used  \citep{Klypin09}. A detailed
-description of this simulation can be found in \cite{Bolshoi}.
+description of this simulation can be found in \cite{Klypin:2010qw}.
 
 The cosmological parameters are compatible with the results from the
 fifth and seventh year of data from the Wilkinson Microwave Anisotropy
@@ -69,50 +36,59 @@ the results obtained for $\Delta=200$.
 
 \subsection{Concentration and shape measurements}
 
+The concentration values reported in the database are computed for an
+spherical NFW profile.  The estimation uses an analytical property of
+the NFW profile that related the circular velocity at the virial radius
 
-\bibliographystyle{abbrvnat}
-\bibliography{references}
-
-\end{document}
-
-\subsection{Concentration estimates}
-
-The estimation for the concentration values is done using an
-analytical property of the NFW profile (see Sect.\,\ref{SL_Ana}) that relates the circular
-velocity at the virial radius:
 \begin{equation}
 V_{200} = \left(\frac{GM_{200}}{R_{200}}\right)^{1/2},
 \end{equation}
-with the maximum circular velocity 
+
+and the maximum circular velocity 
+
 \begin{equation}
 V_{\rm max}^{2} = {\rm max}\left[\frac{GM(<r)}{r}\right].
 \end{equation}
 
 
-The $V_{\rm max}/V_{200}$ velocity ratio is used to determine the halo
-concentration, $c$ (the ratio between $R_{200}$ and the scale radii of
-the NFW profile), using the following relation \citep{Bolshoi}:
-
-\begin{equation}
-\frac{V_{\rm max}}{V_{200}} = \left(\frac{0.216 c}{c}\right)^{1/2}
-\end{equation}
-
-where $f(c)$ is
-\begin{equation}
-f(x) = \ln(1+c) - \frac{c}{(1+c)}.
-\end{equation}
-
-For each BDM overdensity the $V_{\rm max}/V_{200}$ ratio in order to
-find the concentration $c$ by solving numerically the previous two
-equations.  This method provides a robust estimate of the concentration
-compared to a radial fitting to the NFW profile, which is strongly
-dependent on the radial range used for the fit
-\citep{Bolshoi,Meneghetti13}. Comparison of these two methods to
-using halos where the NFW functional fit yield a small systematic
-offset of $(5-15)\%$, with the concentration  derived by the velocity
-ratio method being higher \citep{Prada12}.  
-
-\subsection{Shape estimates}
 
 
-\end{document}
+
+%\subsection{Concentration estimates}
+
+%The estimation for the concentration values is done using an
+%analytical property of the NFW profile (see Sect.\,\ref{SL_Ana}) that relates the circular
+%velocity at the virial radius:
+%\begin{equation}
+%V_{200} = \left(\frac{GM_{200}}{R_{200}}\right)^{1/2},
+%\end{equation}
+%with the maximum circular velocity 
+%\begin{equation}
+%V_{\rm max}^{2} = {\rm max}\left[\frac{GM(<r)}{r}\right].
+%\end{equation}
+
+
+%The $V_{\rm max}/V_{200}$ velocity ratio is used to determine the halo
+%concentration, $c$ (the ratio between $R_{200}$ and the scale radii of
+%the NFW profile), using the following relation \citep{Bolshoi}:
+
+%\begin{equation}
+%\frac{V_{\rm max}}{V_{200}} = \left(\frac{0.216 c}{c}\right)^{1/2}
+%\end{equation}
+
+%where $f(c)$ is
+%\begin{equation}
+%f(x) = \ln(1+c) - \frac{c}{(1+c)}.
+%\end{equation}
+
+%For each BDM overdensity the $V_{\rm max}/V_{200}$ ratio in order to
+%find the concentration $c$ by solving numerically the previous two
+%equations.  This method provides a robust estimate of the concentration
+%compared to a radial fitting to the NFW profile, which is strongly
+%dependent on the radial range used for the fit
+%\citep{Bolshoi,Meneghetti13}. Comparison of these two methods to
+%using halos where the NFW functional fit yield a small systematic
+%offset of $(5-15)\%$, with the concentration  derived by the velocity
+%ratio method being higher \citep{Prada12}.  
+
+%\subsection{Shape estimates}
