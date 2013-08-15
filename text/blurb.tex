@@ -49,7 +49,7 @@ calculated using  the radial mass distribution $M(<r)$ for all bound
 particles. The bins in radius are $\Delta \log r=0.01$. The maximum
 $V_{\rm circ}$ is also stored as $V_{\rm max}$.
 
-\subsection{Concentration and shape measurements}
+\subsection{Concentration measurement}
 
 
 The concentration values reported in the database are computed for an
@@ -89,4 +89,34 @@ concentrations derived with the velocities are
 higher. For halos with concentrations $c<5$ the offset is smaller than
 the intrinsic scatter at fixed halo mass \citep{Prada2012}.
 
-%\subsection{Shape estimates}
+\subsection{Shape measurement}
+The information on the axis ratios is obtained by diagonalizing the
+modified inertia tensor computed from all the bound particles inside
+the halo radius
+
+\begin{equation}
+T_{jk}  = \sum_{i}\frac{x_{ij}x_{ik}}{r_i^2}
+\end{equation}
+
+where $i$ runs over the particle index, $j,k=1,2,3$ corresponds to
+the dimensions of the position vector and $r_i$ is the norm of the
+position vector measured from the halo center. The eigenvalues of this
+tensor are proportional to the values of $a$, $b$ and $c$. The ratios
+$b/a$ and $c/a$ correspond to the eigenvalue ratios.
+
+The values stored in the database do not include any correction due to
+the fact that $T_{jk}$ is calculated on a spherical region. However we
+apply such correction, which is dependent on the halo concentration
+$q=R_{\rm rms}/R_{\rm vir}$ where $R_{\rm rms}=\sum_i m_iR_i^2/\sum_i
+  m_i$. The true axial ration are computed using the following
+  formulae \citep{Riebe:2011gp}:
+
+\begin{equation}
+\left(\frac{c}{a}\right)_{\rm true}  =
+\left(\frac{c}{a}\right)^s,\ s=1 + 2{\rm max}(q - 0.4,0) +(5.5{\rm max}(q-0.4,0))^3
+\end{equation} 
+
+\begin{equation}
+\left(\frac{b}{a}\right)_{\rm true}  =
+\left(\frac{b}{a}\right)^p,\ p=1 + 2{\rm max}(q - 0.4,0) +(5.7{\rm max}(q-0.4,0))^3
+\end{equation} 
