@@ -114,9 +114,44 @@ $q=R_{\rm rms}/R_{\rm vir}$ where $R_{\rm rms}=\sum_i m_iR_i^2/\sum_i
 \begin{equation}
 \left(\frac{c}{a}\right)_{\rm true}  =
 \left(\frac{c}{a}\right)^s,\ s=1 + 2{\rm max}(q - 0.4,0) +(5.5{\rm max}(q-0.4,0))^3
+\label{eq:shape1}
 \end{equation} 
 
 \begin{equation}
 \left(\frac{b}{a}\right)_{\rm true}  =
-\left(\frac{b}{a}\right)^p,\ p=1 + 2{\rm max}(q - 0.4,0) +(5.7{\rm max}(q-0.4,0))^3
+\left(\frac{b}{a}\right)^p,\ p=1 + 2{\rm max}(q - 0.4,0) +(5.7{\rm
+  max}(q-0.4,0))^3
+\label{eq:shape2}
 \end{equation} 
+
+These relationships were calibrated against the results of a more
+computationally expensive method for  measuring halo shapes
+\citep{Allgood2006}. This method starts from the spherical analysis
+provided by BDM to redefine ellipsoidal boundaries according to the
+determination of the $c/a,b/a$ axis ratios. From this new volume
+proceeds a new calculation and diagonalization of the reduced inertia
+tensor. This procedure is iterated until reaching convergen on the
+axis ratios is reached. 
+
+
+\subsection{Self-consistency}
+
+In our computations we take the information from a spherical volume to
+infer quantities that corresponds to an ellipsoid. In particular we
+are interested in three quantities: shape, concentration and total
+mass.
+
+For the shape the conversion between spherical and
+ellipsoidal volumnes is already provided by Equations \ref{eq:label1} and
+\ref{eq:label2}. The equivalence between the spherical and ellipsoidal
+concentration is done using the relationship in Equaation
+\ref{eq:cav}. Finally, we do not implement any conversion between the
+total halo mass infered from the spherical BDM and the expected
+ellipsoidal volume counterpart. 
+
+Strictty speaking the values we used for the total mass are not
+consistent with the ellipsoidal approximation. However, the
+differences between these two quantities are below the percent level,
+much less than the variation across the halo population for the mass
+and other quantities of interest. 
+
