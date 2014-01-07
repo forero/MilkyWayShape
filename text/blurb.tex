@@ -1,14 +1,16 @@
 
 
    
-\section{Simulation}\label{Simulations}
+\section{Simulation}
+\label{sec:simulation}
+
 
 We use a large N-body simulation dubbed \verb"Bolshoi". The data in
 this paper is available to the public throug a
 database \footnote{\texttt{http://www.multidark.org/MultiDark/MyDB}}
-presented by \cite{Riebe:2011gp}. The \verb"Bolshoi" simulation follows 
+presented by \cite{Riebe2013}. The \verb"Bolshoi" simulation follows 
 the non-linear evolution of dark matter density field in a cubic
-volume of side $250$\hMpc sampled with $2048^3$ particles. The code
+volume of side $250$\hMpc sampled with $2048^3$ particles. The 
 adaptive mesh refinment code ART was used  \citep{Klypin09}. A detailed
 description of this simulation can be found in \cite{Klypin:2010qw}.
 
@@ -29,15 +31,19 @@ algorithm \citep{KlypinBDM}. The first step in the algorithm is
 finding the density at the particles' positions in the simulation
 around which spheres of radius $R$ are built to contain a mass
 overdensity $M_{\Delta} = \frac{4\pi}{3}\Delta \rho_{\rm
-  cr}(z)R_{\Delta}^{3}$, where $\rho_{\rm}$ is the critical density of
+  cr}(z)R_{\Delta}^{3}$, where $\rho_{\rm c}$ is the critical density of
 the Universe and $\Delta$ is a desired overdensity threshold. We use
-the results obtained for $\Delta=200$. 
+the results obtained for halos with densities $360$ times the
+\emph{average density} to be close to the standard overdensity
+criterion. The radius at which this overdensity criterion is met is
+called the virial radius $R_{\rm vir}$ and the mass enclosed in that
+radius is the virial mass $M_{\rm vir}$.
 
 There a few cases where a halo is truncated to have a radius
-$R<R_{200}$. This corresponds to halos that are about to merge with
+$R<R_{\rm vir}$. This corresponds to halos that are about to merge with
 other massive structures. In this case the radius corresponds to the
 distance to the surface where the density raises again due to the
-proximity to the soon-to-be host halo.
+proximity to the soon-to-be host halo. 
 
 The particles in the halo are also subject to an unbinding process,
 whereby the kinetic energy of each particle is compared against the
@@ -56,17 +62,17 @@ The concentration values reported in the database are computed for an
 spherical NFW profile.  
 
 The measurement of the concentration uses a property of halos by which
-the ratio $V_{\rm max}/V_{\rm 200}$ where
+the ratio $V_{\rm max}/V_{\rm vir}$ where
 
 \begin{equation}
-V_{200} = \left(\frac{GM_{200}}{R_{200}}\right)^{1/2},
+V_{\rm vir} = \left(\frac{GM_{\rm vir}}{R_{\rm vir}}\right)^{1/2},
 \end{equation}
 
 is a measurment of the concentration. For the case of the NFW halo
 density profile, this ratio follows:
 
 \begin{equation}
-\frac{V_{\rm max}}{V_{\rm 200}} = \left(\frac{0.216
+\frac{V_{\rm max}}{V_{\rm vir}} = \left(\frac{0.216
   c}{f(c)}\right)^{1/2}, 
 \label{eq:ratio}
 \end{equation}
@@ -77,11 +83,11 @@ f(c) = \ln(1+c) - \frac{c}{(1+c)}.
 \label{eq:c_function}
 \end{equation}
 
-After calculating the ratio $V_{\rm max}/V_{\rm 200}$ for each halo
+After calculating the ratio $V_{\rm max}/V_{\rm vir}$ for each halo
 the equations \ref{eq:ratio} and \ref{eq:c_function} are solved
 numerically. 
 
-The results of this method are computationally robust, in contrast to
+The results of this method are computationally robust in comparison with
 more uncertain radial fitting methoads that are strongly dependent on
 the range used for the fit. \citep{Klypin:2010qw,Meneghetti2013}. The
 comparison of these two methods yield an offset of $<15\%$, where the
@@ -126,7 +132,7 @@ $q=R_{\rm rms}/R_{\rm vir}$ where $R_{\rm rms}=\sum_i m_iR_i^2/\sum_i
 
 These relationships were calibrated against the results of a more
 computationally expensive method for  measuring halo shapes
-\citep{Allgood2006}. This method starts from the spherical analysis
+\citep{Allgood:2005eu}. This method starts from the spherical analysis
 provided by BDM to redefine ellipsoidal boundaries according to the
 determination of the $c/a,b/a$ axis ratios. From this new volume
 proceeds a new calculation and diagonalization of the reduced inertia
@@ -149,9 +155,17 @@ concentration is done using the relationship in Equaation
 total halo mass infered from the spherical BDM and the expected
 ellipsoidal volume counterpart. 
 
-Strictty speaking the values we used for the total mass are not
+Strictly speaking the values we used for the total mass are not
 consistent with the ellipsoidal approximation. However, the
-differences between these two quantities are below the percent level,
-much less than the variation across the halo population for the mass
-and other quantities of interest. 
+differences between these two quantities are at most by $20\%$
+\cite{2011MNRAS.411..584M}, much less than the variation across the
+halo population for the mass and other quantities of interest. 
 
+
+\subsection{Cleaning the Halo Sample}
+
+The sample of halos within the halo mass range of interest still has
+some spurious elements. For instance, there are halos that are near to
+other massive structures and are trunctated by the BDM
+algorithm. Therefore we discard halos with a radius less than $200$
+kpc reducing the original sample by $\sim 5\%$. 
